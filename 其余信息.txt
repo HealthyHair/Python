@@ -1,0 +1,89 @@
+利用virtualenvwrapper使用了虚拟环境
+windows系统安装
+win徽标+r, 输入cmd, 打开命令行窗口
+输入： pip install virtualenvwrapper-win
+打开控制面板-系统和安全-系统-高级系统设置-环境变量-系统变量-点击新建，
+变量名：输入 WORKON_HOME， 变量值：输入自定义的路径，确定保存即可
+进入pthon的安装路径，我这里是C:\Program Files\python36\Scripts下，具体根据自己的安装路径
+双击virtualenvwrapper.bat
+重新打开cmd命令行窗口，即可使用
+
+Linux系统
+进入命令行界面
+pip install virtualenvwrapper(Linux)
+首先，需要对 virtualenvwrapper进行配置。它需要指定一个环境变量，叫做WORKON_HOME，
+并且需要运行一下它的初始化工具 virtualenvwrapper.sh，这个脚本在 /usr/local/bin/ 目录下。WORKON_HOME 就是它将要用来存放各种虚拟环境目录的目录，
+这里我们可以设置为 ~/.virtualenvs。export WORKON_HOME='~/.virtualenvs' source /usr/local/bin/virtualenvwrapper.sh
+由于每次都需要执行这两部操作，我们可以将其写入终端的配置文件中。例如，如果使用 bash，则添加到 ~/.bashrc 中；如果使用 zsh，则添加到 ~/.zshrc 中。这样每次启动终端的时候都会自动运行
+
+指令
+创建虚拟环境
+利用 virtualenvwrapper，我们可以使用下面的命令轻松创建一个虚拟环境。
+mkvirtualenv spider
+之后我们就有了一个叫做 spider 的虚拟环境。它被存放在 $WORKON_HOME/spider 目录下。
+
+新建虚拟环境之后会自动激活虚拟环境。如果我们平时想要进入某个虚拟环境，可以用下面的命令。
+workon spider
+这也就是为什么环境变量中存放虚拟环境的目录为啥叫做WORKON_HOME。顺便说一句，workon 后面可是可以支持用 tab自动补全的哟。
+
+同样，离开虚拟环境，可以使用。
+deactivate
+
+另外，删除虚拟环境也一样简单。
+rmvirtualenv spider
+
+
+运行服务器命令如下：python manage.py runserver
+可以不写IP和端口，默认IP是127.0.0.1，默认端口为8000。
+mkvirtualenv -p C:\python35\python.exe ```
+
+pip install django==1.8.2
+
+pip install pymysql
+
+_init_.py文件
+import pymysql
+pymysql.install_as_MySQLdb()
+
+
+python manage.py makemigrations
+python manage.py migrate
+TEST1
+PART1
+首页
+http://127.0.0.1:8000/
+管理：账号1606014314 密码123456789
+http://127.0.0.1:8000/admin/
+
+TEST2
+书籍管理
+http://127.0.0.1:8000/
+关联
+http://127.0.0.1:8000/area/
+
+
+
+PART3
+post get 方式
+http://127.0.0.1:8000/
+视图
+http://127.0.0.1:8000/delete222222222/
+HttpResponse
+http://127.0.0.1:8000/index2/
+JsonResponse
+http://127.0.0.1:8000/json1/
+
+
+PART4
+登录
+http://127.0.0.1:8000/login/
+转义
+http://127.0.0.1:8000/html_escape/
+模板继承
+http://127.0.0.1:8000/temp_inherit/
+过滤器
+http://127.0.0.1:8000/temp_filter/
+验证码
+http://127.0.0.1:8000/verify_show/
+反向解析
+http://127.0.0.1:8000/fan1/
